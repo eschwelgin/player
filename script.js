@@ -21,10 +21,8 @@ var title = document.querySelector("#title")
 var play = document.querySelector("#play")
 var pause = document.querySelector("#pause")
 var playList = document.getElementById("list")
-//----------------------------------------------------------------------        
 
-// add playlist 
-
+// add playlist ----------------------------------------------------------
 function createList() {
     for (i = 0; i < video.length; i++) {
         var node = document.createElement("li")
@@ -46,8 +44,7 @@ function listClick(num) { //this may work if I turn video into an object, and ad
     currentIndex = video.indexOf(current)
     title.innerHTML = current
 }
-
-//----------------------------------------------------------------------
+// end playlist-----------------------------------------------------------
 
 // cycles through avalible videos
 function addIndex() { 
@@ -72,6 +69,7 @@ function playRando() {
     currentIndex = video.indexOf(current)
     title.innerHTML = current
 }
+// event listeners ---------------------------------------------------
 // watches for end of video and plays next video in index
 player.addEventListener("ended", playNext)
 
@@ -96,5 +94,7 @@ function playFirst() {
     title.innerHTML = current
 }
 playFirst()  
+// end event listeners-------------------------------------------------
 
 // add files to array on startup - looks like php is the preferred way to do this 
+// move var videos to an object filename: title: id: 
