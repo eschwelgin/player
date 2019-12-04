@@ -1,0 +1,9 @@
+#list {
+    position: absolute;
+    top: 0px; 
+    right: 10px;
+}
+
+#list>li {
+    margin: 20px 0px 20px 0px;
+}
