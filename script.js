@@ -1,7 +1,16 @@
 var video = [ // holds list of avalible videos by filename, stored in the root folder 
     "Bassnectar & Dorfex Bos - Other Worlds [Reflective Part 2].mp4",
+    "Bassnectar - Reaching Out [OFFICIAL VIDEO].mp4",
     "Bassnectar & Hailo - Irresistible Force [Reflective Part 4].mp4",
-    "Bassnectar - Reaching Out [OFFICIAL VIDEO].mp4"
+    "GRiZMATIK MY PEOPLE (OFFICIAL MUSIC VIDEO).mp4",
+    "Kaminanda - Wizards and Spice.mp4",
+    "Marvel Years - Hit Them With It.mp4",
+    "Neil Young- Old Man (Marvel Years Remix).mp4",
+    "Ratatat x RJD2 (Marvel Years Mashup).mp4",
+    "Shatter Me Featuring Lzzy Hale - Lindsey Stirling.mp4",
+    "SunSquabi - Just A Little.mp4",
+    "Underground - Lindsey Stirling.mp4",
+    "We Are Giants ft Dia Frampton - Lindsey Stirling.mp4"
     ]
 var current = "" // holds filename title of current video
 var currentIndex = 0 // holds video[x] index of current video 
@@ -22,6 +31,7 @@ function createList() {
         node.textContent = video[i]
         node.setAttribute("id", "btn" + i)
         node.setAttribute("class","btn")
+        node.setAttribute("onclick", "listClick(id)")
         playList.appendChild(node)
     }
 }
@@ -29,18 +39,14 @@ createList()
 
 var button = document.querySelector(".btn")
 
-// button.addEventListener("click", function() { //psudo // object solution works better.. video id > 9
-//     id = getAttribute(id # ) charAt(4) 
-//     listClick(id)
-// })
-
 function listClick(num) { //this may work if I turn video into an object, and add an id number 
-    player.setAttribute("src", video[num])
+    id = num.replace('btn','')
+    player.setAttribute("src", video[id])
+    current = video[id]
+    currentIndex = video.indexOf(current)
+    title.innerHTML = current
 }
 
-// button.addEventListener("click", function(num) {
-//     player.setAttribute("src", video[num])
-// }); 
 //----------------------------------------------------------------------
 
 // cycles through avalible videos
